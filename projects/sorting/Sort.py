@@ -21,6 +21,7 @@ class Sorter:
 			self.bubblesort()
 		self.report_time()
 		return self.contents
+
 	def quicksort(self):
 		# TODO
 		return
