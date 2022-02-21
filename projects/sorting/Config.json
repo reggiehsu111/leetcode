@@ -1,0 +1,7 @@
+{
+    "input_file": "input.txt",
+    "alg": "bubblesort",
+    "mode": "List",
+    "config": "Config.json",
+    "write_config": true
+}

@@ -1,5 +1,3 @@
-from Report import Report
-
 def sort(contents, mode="LinkedList"):
 	# TODO: Sort the contents
 	return
@@ -12,14 +10,12 @@ class Sorter:
 		'''
 		self.contents = contents
 		self.mode = mode
-		self.report = Report()
 
 	def sort(self, alg):
 		if alg == "quicksort":
 			self.quicksort()
 		elif alg == "bubblesort":
 			self.bubblesort()
-		self.report_time()
 		return self.contents
 
 	def quicksort(self):
@@ -34,7 +30,3 @@ class Sorter:
 					if self.contents[j] > self.contents[j + 1] :
 						self.contents[j], self.contents[j + 1] = self.contents[j + 1], self.contents[j]
 			return
-
-	def report_time(self):
-		# TODO
-		return
