@@ -1,6 +1,6 @@
 # leetcode
 Leetcode notes
-- Hackmd page: https://hackmd.io/@leetcode-notes/MainPage
+- Hackmd page: https://hackmd.io/@reggiehsu111/leetcode-notes
 
 ## Repo Structure
 ```
