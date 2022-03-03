@@ -1,9 +1,7 @@
 from os import path
 
 from IOs import readInputs
-from Sort.Sort import Sorter
 from utils.parser import ConfigParser
-from Report import Report
 from Experiments.expr import Expr
 
 parser = ConfigParser(description="Sort Lab")
@@ -12,7 +10,8 @@ parser.add_argument('--alg', default='bubblesort', type=str, help='sorting algor
 parser.add_argument('--mode', default='List', type=str, help='Mode of the underlying data structure. Right now it can be Lists or LinkedLists')
 parser.add_argument('-c','--config', default=None, help='Specify which config to read')
 parser.add_argument('-wc','--write-config', action='store_true', help='specify if you want to write the current arguments to config')
-parser.add_argument('--expr', default='New Experiment', help='experiment name')
+parser.add_argument('--expr-name', default='new_expr', help='experiment name')
+parser.add_argument('--max-exponent', default=2, type=int, help='maximum exponential ofthe lenght of random generated list for Expr to run')
 
 def main():
     args = parser.parse_args()
@@ -21,14 +20,8 @@ def main():
     if args.write_config and args.config:
         parser.write_config(args.config)
 
-    report = Report()
     expr = Expr(args)
-
-    contents = readInputs(args.input_file, args.mode)
-    print(contents)
-    sorter = Sorter(contents, args.mode)
-    contents = sorter.sort(args.alg)
-    print(contents) 
+    expr.run()
 
 if __name__ == "__main__":
     main()

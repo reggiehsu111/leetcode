@@ -16,17 +16,20 @@ class ArrayParser:
 
     def parse(self, line):
         if self.mode == "List":
-            self.parseList(line)
+            self.parseStr2List(line)
         elif self.mode == "LinkedList":
-            self.parseLinkedList(line)
+            self.parseStr2LinkedList(line)
         assert self.contents
         return self.contents
 
-    def parseList(self, line):
+    def parseStr2List(self, line):
         self.contents = [int(x.strip()) for x in line[1:-2].split(',')]
         return self.contents
 
-    def parseLinkedList(self, line):
-        self.parseList(line)
-        self.contents = constructLinkedList(self.contents)
+    def parseList2LinkedList(self, input_list):
+        self.contents = constructLinkedList(input_list)
         return self.contents
+
+    def parseStr2LinkedList(self, line):
+        self.parseStr2List(line)
+        return self.parseList2LinkedList(self.contents)

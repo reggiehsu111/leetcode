@@ -1,9 +1,9 @@
 {
     "input_file": "input.txt",
-    "alg": "bubblesort",
+    "alg": "heapsort",
     "mode": "List",
-    "config": "Config.json",
+    "config": "Config-heap.json",
     "write_config": true,
-    "expr_name": "Bubble_Sort",
+    "expr_name": "Heap_Sort",
     "max_exponent": 5
 }
